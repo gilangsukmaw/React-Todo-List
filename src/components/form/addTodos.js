@@ -6,8 +6,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { Dialog, Transition } from "@headlessui/react";
-import { addTodoModalCloseActions } from "../../redux/actions/addTodoModalActions";
-import { addTodo } from "../../redux/actions/addTodoAction";
+import { addTodoModalCloseActions } from "../../redux/actions/todo/addTodoModalActions";
+import { addTodo } from "../../redux/actions/todo/addTodoAction";
 
 const AddTodosForm = () => {
   const [todo, setTodo] = useState({
@@ -39,7 +39,7 @@ const AddTodosForm = () => {
     <>
       <ToastContainer
         position="top-right"
-        autoClose={5000}
+        autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -116,6 +116,7 @@ const AddTodosForm = () => {
                         </div>
                       </div>
                     </div>
+
                     <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                       <button
                         type="submit"

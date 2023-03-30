@@ -1,4 +1,4 @@
-import { globalStatesName } from "../consts";
+import { globalStatesName } from "../../consts";
 
 export const addTodoModalShowActions = () => {
   return {

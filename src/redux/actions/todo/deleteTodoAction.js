@@ -1,17 +1,15 @@
 import axios from "axios";
-import { apiHost, globalStatesName, todoRoutes } from "../consts";
+import { apiHost, globalStatesName, todoRoutes } from "../../consts";
 
-export const addTodo = (payload) => {
+export const deleteTodo = (payload) => {
   // Thunk Function
   return async (dispatch, getState) => {
     await axios
-      .post(`${apiHost}${todoRoutes.createTodo}`, { title: payload.title })
+      .delete(`${apiHost}${todoRoutes.deleteTodo}/${payload}`)
       .then((response) => {
         dispatch({
-          type: globalStatesName.createTodo,
-          payload: {
-            title: payload.title,
-          },
+          type: globalStatesName.deleteTodo,
+          payload: payload,
         });
         return Promise.resolve();
       })

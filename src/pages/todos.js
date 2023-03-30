@@ -1,11 +1,11 @@
 import { DispatchCtx } from "../router";
-import { addTodoModalShowActions } from "../redux/actions/addTodoModalActions";
 import { useContext, useEffect } from "react";
-import { getTodosData } from "../redux/actions/getTodoAction";
 
 import Card from "../components/card/todoCard";
 import { useSelector } from "react-redux";
 import AddTodosForm from "../components/form/addTodos";
+import { getTodosData } from "../redux/actions/todo/getTodoAction";
+import { addTodoModalShowActions } from "../redux/actions/todo/addTodoModalActions";
 
 function Todos() {
   const dispatch = useContext(DispatchCtx);
@@ -84,6 +84,7 @@ function Todos() {
             {todos.data.map((x) => (
               <Card
                 key={x.id}
+                id={x.id}
                 color={x.color}
                 title={x.title}
                 text={x.text}

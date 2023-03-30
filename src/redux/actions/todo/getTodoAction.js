@@ -1,5 +1,5 @@
 import axios from "axios";
-import { apiHost, globalStatesName, todoRoutes } from "../consts";
+import { apiHost, globalStatesName, todoRoutes } from "../../consts";
 
 export const getTodosData = () => {
   // Thunk Function

@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 import { addTodoModalReducer } from "./addTodoModalReducer";
-import { getAllTodoReducer } from "./getTodosReducer";
+import { todoReducer } from "./todoReducer";
 
 export const reducers = combineReducers({
   // counter: countReducer,
   addTodoModal: addTodoModalReducer,
-  allTodos: getAllTodoReducer,
+  allTodos: todoReducer,
 });
