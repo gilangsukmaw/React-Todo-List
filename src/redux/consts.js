@@ -1,3 +1,5 @@
+const { REACT_APP_API } = process.env;
+
 export const globalStatesName = {
   addTodoModalShow: "ADD_TODO_MODAL_SHOW",
   addTodoModalClose: "ADD_TODO_MODAL_ClOSE",
@@ -18,7 +20,7 @@ export const globalStatesName = {
   deleteTodoFailed: "DELETE_TODO_FAILED",
 };
 
-export const apiHost = "http://192.168.123.2:3000";
+export const apiHost = REACT_APP_API;
 
 export const todoRoutes = {
   getAllTodos: "/api/v1/todos",
