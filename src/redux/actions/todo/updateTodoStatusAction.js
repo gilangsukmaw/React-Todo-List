@@ -1,5 +1,5 @@
 import axios from "axios";
-import { apiHost, globalStatesName, todoRoutes } from "../../consts";
+import { apiHost, todoRoutes } from "../../consts";
 
 export const doneTodo = (payload) => {
   // Thunk Function

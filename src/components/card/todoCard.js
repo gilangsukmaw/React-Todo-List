@@ -49,7 +49,7 @@ const TodoCard = ({ id, color, title, status }) => {
           <div className="p-8">
             <div className="flex items-center justify-between">
               <div>
-                {statusState == "done" ? (
+                {statusState === "done" ? (
                   <h1 className="block mt-1 text-lg leading-tight font-medium text-black line-through">
                     {title}
                   </h1>
@@ -60,7 +60,7 @@ const TodoCard = ({ id, color, title, status }) => {
                 )}
               </div>
               <div>
-                {statusState == "done" ? (
+                {statusState === "done" ? (
                   <button
                     onClick={handleUndone}
                     className="rounded-full bg-cyan-300 hover:bg-white text-cyan-50 font-semibold hover:text-cyan-300 border hover:border-transparent rounded mx-1"
