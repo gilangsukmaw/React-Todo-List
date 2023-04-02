@@ -46,7 +46,7 @@ function Login() {
       />
       <div className="bg-white">
         <section className="bg-gray-900">
-          <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+          <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
             <a
               href="#"
               className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
@@ -103,7 +103,7 @@ function Login() {
                     Sign in
                   </button>
                   <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                    Don’t have an account yet?{" "}
+                    Don’t have an account yet?
                     <a
                       href="#"
                       className="font-medium text-indigo-600 hover:underline dark:text-primary-500"
