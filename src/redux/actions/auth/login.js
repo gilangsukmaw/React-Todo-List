@@ -36,7 +36,6 @@ export const loginAction = (payload) => {
 
 export const logoutAction = () => {
   return (dispatch, getState) => {
-    localStorage.removeItem("token");
     return dispatch({
       type: globalStatesName.logout,
     });

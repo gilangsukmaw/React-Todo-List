@@ -47,7 +47,7 @@ const TodoCard = ({ id, color, title, status }) => {
       <div className="rounded-lg overflow-hidden shadow-md break-words ">
         <div style={{ backgroundColor: color }}>
           <div className="p-2">
-            <div class="grid grid-cols-12">
+            <div className="grid grid-cols-12">
               <div className="col-span-9">
                 {statusState === "done" ? (
                   <p className="block mt-1 text-lg leading-tight font-medium text-black line-through">

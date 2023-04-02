@@ -22,6 +22,8 @@ export const globalStatesName = {
   loginSucces: "LOGIN",
   loginFailed: "LOGIN_FAILED",
 
+  userProfile: "GET_USER_PROFILE",
+
   logout: "LOGOUT",
 };
 

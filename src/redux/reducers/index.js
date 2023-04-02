@@ -1,9 +1,10 @@
 import { combineReducers } from "redux";
 import { addTodoModalReducer } from "./addTodoModalReducer";
+import { authReducer } from "./authReducer";
 import { todoReducer } from "./todoReducer";
 
 export const reducers = combineReducers({
-  // counter: countReducer,
+  authState: authReducer,
   addTodoModal: addTodoModalReducer,
   allTodos: todoReducer,
 });
