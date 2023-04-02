@@ -19,46 +19,6 @@ function Todos() {
 
   const todos = useSelector((state) => state.allTodos);
 
-  // const todo = [
-  //   {
-  //     id: 1,
-  //     color: "bg-pink-100",
-  //     title: "Meet Tom at the Station",
-  //     status: true,
-  //   },
-  //   {
-  //     id: 2,
-  //     color: "bg-orange-100",
-  //     title: "Meet Hana at cafe",
-  //     status: false,
-  //   },
-  //   {
-  //     id: 3,
-  //     color: "bg-teal-100",
-  //     title: "Buy Groceries",
-  //     status: false,
-  //   },
-  //   {
-  //     id: 4,
-  //     color: "bg-lime-100",
-  //     title: "Feed the cat",
-  //     status: false,
-  //   },
-  //   {
-  //     id: 5,
-  //     color: "bg-red-100",
-  //     title: "Prepare for the meet",
-  //     status: false,
-  //   },
-  //   {
-  //     id: 6,
-  //     color: "bg-blue-100",
-  //     title: "Dinner wih Sarah",
-  //     status: false,
-  //   },
-  //   // More products...
-  // ];
-
   return (
     <>
       <AddTodosForm />

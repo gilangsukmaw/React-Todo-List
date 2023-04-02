@@ -1,3 +1,5 @@
+import env from "react-dotenv";
+
 export const globalStatesName = {
   addTodoModalShow: "ADD_TODO_MODAL_SHOW",
   addTodoModalClose: "ADD_TODO_MODAL_ClOSE",
@@ -16,9 +18,19 @@ export const globalStatesName = {
 
   deleteTodo: "DELETE_TODO",
   deleteTodoFailed: "DELETE_TODO_FAILED",
+
+  loginSucces: "LOGIN",
+  loginFailed: "LOGIN_FAILED",
+
+  logout: "LOGOUT",
 };
 
-export const apiHost = "https://todolistbe-gilangsukmawijaya.b4a.run";
+export const apiHost = env.API_URL;
+
+export const authRoutes = {
+  login: "/api/v1/auth/login",
+  register: "/api/v1/auth/register",
+};
 
 export const todoRoutes = {
   getAllTodos: "/api/v1/todos",

@@ -44,26 +44,69 @@ const TodoCard = ({ id, color, title, status }) => {
 
   return (
     <div key={id} className="py-2">
-      <div className="rounded-xl shadow-md overflow-hidden">
+      <div className="rounded-lg overflow-hidden shadow-md break-words ">
         <div style={{ backgroundColor: color }}>
-          <div className="p-8">
-            <div className="flex items-center justify-between">
-              <div>
+          <div className="p-2">
+            <div class="grid grid-cols-12">
+              <div className="col-span-9">
                 {statusState === "done" ? (
-                  <h1 className="block mt-1 text-lg leading-tight font-medium text-black line-through">
+                  <p className="block mt-1 text-lg leading-tight font-medium text-black line-through">
                     {title}
-                  </h1>
+                  </p>
                 ) : (
-                  <h1 className="block mt-1 text-lg leading-tight font-medium text-black">
+                  <p className="block mt-1 text-lg leading-tight font-medium text-black">
                     {title}
-                  </h1>
+                  </p>
                 )}
               </div>
-              <div>
-                {statusState === "done" ? (
+              <div className="col-span-3 flex justify-end items-center">
+                <div>
+                  {statusState === "done" ? (
+                    <button
+                      onClick={handleUndone}
+                      className="rounded-full bg-cyan-300 hover:bg-white text-cyan-50 font-semibold hover:text-cyan-300 border hover:border-transparent rounded mx-1"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-6 h-6 py-1 px-1"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M4.5 12.75l6 6 9-13.5"
+                        />
+                      </svg>
+                    </button>
+                  ) : (
+                    <button
+                      onClick={handleDone}
+                      className="rounded-full bg-white hover:bg-cyan-300 text-cyan-50 font-semibold hover:text-white border hover:border-transparent rounded mx-1"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-6 h-6 py-1 px-1"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M4.5 12.75l6 6 9-13.5"
+                        />
+                      </svg>
+                    </button>
+                  )}
+                </div>
+                <div>
                   <button
-                    onClick={handleUndone}
-                    className="rounded-full bg-cyan-300 hover:bg-white text-cyan-50 font-semibold hover:text-cyan-300 border hover:border-transparent rounded mx-1"
+                    onClick={handleDelete}
+                    className="rounded-full bg-white hover:bg-red-400 text-red-50 font-semibold hover:text-white border hover:border-transparent rounded mx-1"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -71,56 +114,16 @@ const TodoCard = ({ id, color, title, status }) => {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="w-6 h-6 py-1 px-1"
+                      className="w-6 h-6"
                     >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
+                        d="M6 18L18 6M6 6l12 12"
                       />
                     </svg>
                   </button>
-                ) : (
-                  <button
-                    onClick={handleDone}
-                    className="rounded-full bg-white hover:bg-cyan-300 text-cyan-50 font-semibold hover:text-white border hover:border-transparent rounded mx-1"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-6 h-6 py-1 px-1"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </button>
-                )}
-
-                <button
-                  onClick={handleDelete}
-                  className="rounded-full bg-white hover:bg-red-400 text-red-50 font-semibold hover:text-white border hover:border-transparent rounded mx-1"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
+                </div>
               </div>
             </div>
           </div>

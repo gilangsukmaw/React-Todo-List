@@ -1,10 +1,16 @@
 import Navbar from "../components/navbar";
 
-function Pages({ pages }) {
+function Pages({ pages, auth }) {
   return (
     <>
-      <Navbar />
-      <div>{pages}</div>
+      {auth ? (
+        <>
+          <Navbar />
+          <div>{pages}</div>
+        </>
+      ) : (
+        <div>{pages}</div>
+      )}
     </>
   );
 }
