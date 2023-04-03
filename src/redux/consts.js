@@ -32,6 +32,7 @@ export const apiHost = env.API_URL;
 export const authRoutes = {
   login: "/api/v1/auth/login",
   register: "/api/v1/auth/register",
+  checkToken: "api/v1/auth/check/token",
 };
 
 export const todoRoutes = {

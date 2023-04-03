@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getFromLocalStorate } from "../../../helper/localStorage";
 import { apiHost, authRoutes, globalStatesName } from "../../consts";
 
 export const loginAction = (payload) => {
@@ -12,6 +13,7 @@ export const loginAction = (payload) => {
       .then((response) => {
         localStorage.setItem("token", response.data.data.token);
         localStorage.setItem("username", response.data.data.username);
+        localStorage.setItem("expiredAt", response.data.data.expiredAt);
 
         dispatch({
           type: globalStatesName.loginSucces,
@@ -40,6 +42,24 @@ export const logoutAction = () => {
       type: globalStatesName.logout,
     });
   };
+};
+
+export const checkToken = async () => {
+  const token = getFromLocalStorate("token");
+
+  // Fetching results from an API : asynchronous action
+  await axios
+    .get(`${apiHost}${authRoutes.checkToken}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((response) => {
+      return true;
+    })
+    .catch((error) => {
+      return false;
+    });
 };
 
 // export const getProfile = () => {
