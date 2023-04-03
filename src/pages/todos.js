@@ -8,6 +8,10 @@ import { getTodosData } from "../redux/actions/todo/getTodoAction";
 import { addTodoModalShowActions } from "../redux/actions/todo/addTodoModalActions";
 
 function Todos() {
+  const dayjs = require("dayjs");
+  var utc = require("dayjs/plugin/utc");
+  dayjs.extend(utc);
+
   const dispatch = useContext(DispatchCtx);
   useEffect(() => {
     dispatch(getTodosData());

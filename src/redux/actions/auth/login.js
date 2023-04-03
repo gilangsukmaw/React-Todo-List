@@ -13,7 +13,6 @@ export const loginAction = (payload) => {
       .then((response) => {
         localStorage.setItem("token", response.data.data.token);
         localStorage.setItem("username", response.data.data.username);
-        localStorage.setItem("expiredAt", response.data.data.expiredAt);
 
         dispatch({
           type: globalStatesName.loginSucces,

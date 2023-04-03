@@ -18,20 +18,28 @@ const TodoCard = ({ id, color, title, status }) => {
 
   const handleDone = () => {
     setStatusState("done");
-    toast.promise(dispatch(doneTodo(id)), {
-      pending: "Updating...",
-      success: "Congrats one of your todo is done 🎉",
-      error: "Opps something went wrong",
-    });
+    toast
+      .promise(dispatch(doneTodo(id)), {
+        pending: "Updating...",
+        success: "Congrats one of your todo is done 🎉",
+        error: "Opps something went wrong",
+      })
+      .catch(() => {
+        setStatusState("on-progress");
+      });
   };
 
   const handleUndone = () => {
     setStatusState("on-progress");
-    toast.promise(dispatch(undoneTodo(id)), {
-      pending: "Updating...",
-      success: "Got it, todo is undoned 👌",
-      error: "Opps something went wrong",
-    });
+    toast
+      .promise(dispatch(undoneTodo(id)), {
+        pending: "Updating...",
+        success: "Got it, todo is undoned 👌",
+        error: "Opps something went wrong",
+      })
+      .catch(() => {
+        setStatusState("done");
+      });
   };
 
   const handleDelete = () => {

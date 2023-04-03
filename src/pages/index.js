@@ -22,7 +22,7 @@ function Pages({ pages, auth }) {
       expired = dayjs(expired).utc().format(); // 2019-03-06T00:00:00Z
       const now = dayjs.utc().format(); // 2019-03-06T00:00:00Z
 
-      if (now > expired) {
+      if (now >= expired) {
         navigate("/login");
         window.location.reload();
       }
