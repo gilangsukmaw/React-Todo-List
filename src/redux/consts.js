@@ -24,6 +24,10 @@ export const globalStatesName = {
 
   userProfile: "GET_USER_PROFILE",
 
+  todoFilterAll: "TODO_FILTER_ALL",
+  todoFilterDone: "TODO_FILTER_DONE",
+  todoFilterUndone: "TODO_FILTER_UNDONE",
+
   logout: "LOGOUT",
 };
 

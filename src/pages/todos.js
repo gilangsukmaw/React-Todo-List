@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import AddTodosForm from "../components/form/addTodos";
 import { getTodosData } from "../redux/actions/todo/getTodoAction";
 import { addTodoModalShowActions } from "../redux/actions/todo/addTodoModalActions";
+import Filter from "../components/dropdown/todoFilter";
 
 function Todos() {
   const dayjs = require("dayjs");
@@ -34,26 +35,30 @@ function Todos() {
                 You're recent To Do
               </h2>
             </div>
-            <div>
-              <button
-                className="bg-cyan-300 hover:bg-cyan-400 text-cyan-50 border-cyan-200 font-semibold hover:text-white py-2 px-4 border hover:border-transparent rounded"
-                onClick={handleShowAddTodoModal}
-              >
-                Add new
-              </button>
+            <div className="grid gap-2 grid-cols-2">
+              <div>{/* <Filter /> */}</div>
+              <div>
+                <button
+                  className="inline-flex w-full justify-center gap-x-1.5 rounded-full bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-indigo-700"
+                  onClick={handleShowAddTodoModal}
+                >
+                  Add new
+                </button>
+              </div>
             </div>
           </div>
 
           <div className="mt-6 flex flex-col">
             {todos.data.map((x) => (
-              <Card
-                key={x.id}
-                id={x.id}
-                color={x.color}
-                title={x.title}
-                text={x.text}
-                status={x.status}
-              />
+              <div key={x.id}>
+                <Card
+                  id={x.id}
+                  color={x.color}
+                  title={x.title}
+                  text={x.text}
+                  status={x.status}
+                />
+              </div>
             ))}
           </div>
         </div>

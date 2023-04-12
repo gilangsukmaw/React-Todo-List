@@ -51,7 +51,7 @@ const TodoCard = ({ id, color, title, status }) => {
   };
 
   return (
-    <div key={id} className="py-2">
+    <div className="py-2">
       <div className="rounded-lg overflow-hidden shadow-md break-words ">
         <div style={{ backgroundColor: color }}>
           <div className="p-2">

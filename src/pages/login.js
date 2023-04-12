@@ -8,6 +8,8 @@ import { useNavigate } from "react-router";
 
 function Login() {
   let navigate = useNavigate();
+  const [isLoading, setLoading] = useState(false);
+
   const [login, setLogin] = useState({
     email: "",
     password: "",
@@ -16,6 +18,7 @@ function Login() {
   const dispatch = useContext(DispatchCtx);
 
   const handleSubmit = (event) => {
+    setLoading(true);
     event.preventDefault();
 
     toast
@@ -27,6 +30,9 @@ function Login() {
       .then(() => {
         navigate("/");
         window.location.reload();
+      })
+      .catch(() => {
+        setLoading(false);
       });
   };
 
@@ -98,7 +104,12 @@ function Login() {
                   <button
                     onClick={handleSubmit}
                     type="submit"
-                    className="w-full text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+                    disabled={isLoading}
+                    className={
+                      isLoading
+                        ? "w-full text-white bg-indigo-400 hover:bg-indigo-400 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-indigo-400 dark:hover:bg-indigo-400 dark:focus:ring-indigo-400"
+                        : "w-full text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+                    }
                   >
                     Sign in
                   </button>
