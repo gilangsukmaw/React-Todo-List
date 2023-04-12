@@ -17,12 +17,15 @@ function Pages({ pages, auth }) {
   const loginInfo = useSelector((state) => state.authState);
 
   useEffect(() => {
-    if (auth && loginInfo.isLoggedIn) {
-      let expired = getFromLocalStorate("expiredAt");
-      expired = dayjs(expired).utc().format(); // 2019-03-06T00:00:00Z
-      const now = dayjs.utc().format(); // 2019-03-06T00:00:00Z
+    let expired = getFromLocalStorate("expiredAt");
+    expired = dayjs(expired).utc().format(); // 2019-03-06T00:00:00Z
+    const now = dayjs.utc().format(); // 2019-03-06T00:00:00Z
 
-      console.log(expired);
+    if (!auth && loginInfo.isLoggedIn) {
+      navigate("/");
+    }
+
+    if (auth && loginInfo.isLoggedIn) {
       if (now >= expired) {
         navigate("/login");
         window.location.reload();
