@@ -4,6 +4,12 @@ export const globalStatesName = {
   addTodoModalShow: "ADD_TODO_MODAL_SHOW",
   addTodoModalClose: "ADD_TODO_MODAL_ClOSE",
 
+  addTodoModalGroupShow: "ADD_TODO_MODAL_GROUP_SHOW",
+  addTodoModalGroupClose: "ADD_TODO_MODAL_GROUP_ClOSE",
+
+  getTodoGroups: "GET_TODO_GROUP",
+  getTodoGroupsFailed: "GET_TODO_GROUP_FAILED",
+
   getTodos: "GET_TODOS",
   getTodosFailed: "GET_TODOS_FAILED",
 
@@ -37,6 +43,12 @@ export const authRoutes = {
   login: "/api/v1/auth/login",
   register: "/api/v1/auth/register",
   checkToken: "api/v1/auth/check/token",
+};
+
+export const todoGroupsRoutes = {
+  getAllTodoGroupss: "/api/v1/todo-groups",
+  createTodo: "/api/v1/todo-groups",
+  deleteTodo: "/api/v1/todo-groups/delete",
 };
 
 export const todoRoutes = {

@@ -6,11 +6,12 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { Dialog, Transition } from "@headlessui/react";
-import { addTodoModalCloseActions } from "../../redux/actions/todo/addTodoModalActions";
+import { addTodoGroupsModalCloseActions } from "../../redux/actions/todo/addTodoGroupsModalActions";
 import { addTodo } from "../../redux/actions/todo/addTodoAction";
+import TodosGroup from "../../pages/todoGroup";
 
-const AddTodosForm = ({ unique }) => {
-  const [todo, setTodo] = useState({
+const AddTodosGroupsForm = ({ unique }) => {
+  const [todoGroup, setTodoGroup] = useState({
     title: "",
   });
 
@@ -18,13 +19,13 @@ const AddTodosForm = ({ unique }) => {
   const modal = useSelector((state) => state.addTodoModal);
 
   const handleClose = () => {
-    dispatch(addTodoModalCloseActions());
+    dispatch(addTodoGroupsModalCloseActions());
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    toast.promise(dispatch(addTodo(todo, unique)), {
+    toast.promise(dispatch(addTodo(todoGroup)), {
       pending: "Saving...",
       success: "Todo saved 👌",
       error: "Opps something went wrong",
@@ -86,27 +87,36 @@ const AddTodosForm = ({ unique }) => {
                         as="h3"
                         className="text-base font-semibold leading-6 text-gray-900"
                       >
-                        Create Todo
+                        Create Todo Groups
                       </Dialog.Title>
                       <div className="mt-2">
                         <div className="space-y-12">
                           <div className="mt-2">
                             <div className="col-span-full">
                               <div className="mt-2">
-                                <textarea
-                                  id="about"
-                                  name="about"
-                                  rows={3}
-                                  className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6 pl-3"
-                                  defaultValue={""}
-                                  placeholder="Feed the cat"
-                                  onChange={(e) =>
-                                    setTodo({
-                                      ...todo,
-                                      title: e.target.value,
-                                    })
-                                  }
-                                />
+                                <div className="sm:col-span-4">
+                                  <label
+                                    htmlFor="email"
+                                    className="block text-sm font-medium leading-6 text-gray-900"
+                                  >
+                                    Email address
+                                  </label>
+                                  <div className="mt-2">
+                                    <input
+                                      id="email"
+                                      name="email"
+                                      type="email"
+                                      autoComplete="email"
+                                      onChange={(e) =>
+                                        setTodoGroup({
+                                          ...TodosGroup,
+                                          title: e.target.value,
+                                        })
+                                      }
+                                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    />
+                                  </div>
+                                </div>
                               </div>
                               <p className="mt-3 text-sm leading-6 text-gray-600">
                                 Write a few sentences about what you gonna do.
@@ -145,4 +155,4 @@ const AddTodosForm = ({ unique }) => {
   );
 };
 
-export default AddTodosForm;
+export default AddTodosGroupsForm;

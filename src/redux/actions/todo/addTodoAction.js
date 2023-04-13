@@ -2,13 +2,13 @@ import axios from "axios";
 import { getFromLocalStorate } from "../../../helper/localStorage";
 import { apiHost, globalStatesName, todoRoutes } from "../../consts";
 
-export const addTodo = (payload) => {
+export const addTodo = (payload, unique) => {
   const token = getFromLocalStorate("token");
   // Thunk Function
   return async (dispatch, getState) => {
     await axios
       .post(
-        `${apiHost}${todoRoutes.createTodo}`,
+        `${apiHost}${todoRoutes.createTodo}/${unique}`,
         { title: payload.title },
         {
           headers: {

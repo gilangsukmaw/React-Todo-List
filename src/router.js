@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 
 import Pages from "./pages";
 import Todos from "./pages/todos";
+import TodosGroup from "./pages/todoGroup";
 import Login from "./pages/login";
 import Welcome from "./pages/welcome";
 
@@ -24,7 +25,11 @@ function Router() {
             path="/todo/:unique"
             element={<Pages pages={<Todos />} auth={true} />}
           />
-          <Route path="/" element={<Pages pages={<Welcome />} auth={true} />} />
+          <Route
+            path="/"
+            element={<Pages pages={<TodosGroup />} auth={true} />}
+          />
+          {/* <Route path="*" element={<Pages pages={<Welcome />} auth={true} />} /> */}
         </Routes>
       </DispatchCtx.Provider>
     </>

@@ -21,10 +21,6 @@ function Pages({ pages, auth }) {
     expired = dayjs(expired).utc().format(); // 2019-03-06T00:00:00Z
     const now = dayjs.utc().format(); // 2019-03-06T00:00:00Z
 
-    if (!auth && loginInfo.isLoggedIn) {
-      navigate("/");
-    }
-
     if (auth && loginInfo.isLoggedIn) {
       if (now >= expired) {
         navigate("/login");
