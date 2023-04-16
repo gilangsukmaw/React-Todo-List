@@ -42,14 +42,14 @@ function Todos() {
               <div>{/* <Filter /> */}</div>
               <div className="space-y-2 px-2 pt-2 pb-3">
                 <div
-                  className="text-white bg-indigo-600 hover:bg-indigo-700 block rounded-full px-3 py-2 font-medium flex"
+                  className="text-white bg-indigo-600 hover:bg-indigo-700 block rounded-full px-3 py-2 font-bold flex"
                   onClick={handleShowAddTodoModal}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth="1.5"
+                    strokeWidth="2.5"
                     stroke="currentColor"
                     className="w-6 h-6"
                   >
