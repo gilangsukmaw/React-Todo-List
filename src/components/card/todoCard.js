@@ -54,7 +54,7 @@ const TodoCard = ({ id, color, title, status }) => {
     <div className="py-2">
       <div className="rounded-lg overflow-hidden shadow-md break-words border">
         <div className="grid grid-cols-12 justify-items-stretch place-items-center">
-          <div className="col-span-9 mx-5">
+          <div className="col-span-9 mx-5 py-5">
             {statusState === "done" ? (
               <p className="block text-lg leading-tight font-light text-black line-through">
                 {title}
