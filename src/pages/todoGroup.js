@@ -28,7 +28,7 @@ function TodosGroup() {
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           <div className="flex justify-between items-center">
             <h2 className="text-2xl font-bold tracking-tight text-gray-900">
-              Todo Group
+              Categories
             </h2>
 
             <div className="grid gap-2 grid-cols-2">

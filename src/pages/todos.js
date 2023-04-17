@@ -35,7 +35,7 @@ function Todos() {
           <div className="flex justify-between items-center">
             <div>
               <h2 className="text-2xl font-bold tracking-tight text-gray-900">
-                You're recent To Do
+                Task list
               </h2>
             </div>
 

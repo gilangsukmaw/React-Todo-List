@@ -3,7 +3,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "To Do", href: "/", current: true },
+  { name: "Task", href: "/", current: true },
   //   { name: "Goals", href: "#", current: false },
 ];
 
