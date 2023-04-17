@@ -52,15 +52,15 @@ const TodoCard = ({ id, color, title, status }) => {
 
   return (
     <div className="py-2">
-      <div className="rounded-lg overflow-hidden shadow-md break-words border">
+      <div className="rounded-lg overflow-hidden shadow-md break-words bg-gray-800">
         <div className="grid grid-cols-12 justify-items-stretch place-items-center">
           <div className="col-span-9 mx-5 py-5">
             {statusState === "done" ? (
-              <p className="block text-lg leading-tight font-light text-black line-through">
+              <p className="block text-xl leading-tight font-light text-white line-through">
                 {title}
               </p>
             ) : (
-              <p className="block text-lg leading-tight font-light text-black">
+              <p className="block text-xl leading-tight font-light text-white">
                 {title}
               </p>
             )}
@@ -69,7 +69,7 @@ const TodoCard = ({ id, color, title, status }) => {
             {statusState === "done" ? (
               <button
                 onClick={handleUndone}
-                className="rounded-full bg-indigo-700 hover:bg-white text-indigo-50 font-semibold hover:text-indigo-700 border hover:border rounded m-2 my-2"
+                className="rounded-full rounded m-2 my-2 border border-2 border-cyan-700 bg-cyan-700 text-white hover:text-transparent hover:bg-transparent"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@ const TodoCard = ({ id, color, title, status }) => {
             ) : (
               <button
                 onClick={handleDone}
-                className="rounded-full bg-white hover:bg-indigo-700 text-indigo-50 font-semibold hover:text-white border hover:border rounded m-2 my-2"
+                className="rounded-full rounded m-2 my-2 border border-2 border-cyan-700 text-transparent hover:text-white hover:bg-cyan-700"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +109,7 @@ const TodoCard = ({ id, color, title, status }) => {
             )}
             <button
               onClick={handleDelete}
-              className="rounded-full bg-white hover:bg-red-400 text-red-50 font-semibold hover:text-white border hover:border-transparent rounded mr-5 my-2"
+              className="rounded-full bg-transparent border border-2 border-red-900 hover:bg-red-700 text-red-900 font-semibold hover:text-white mr-5 my-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
