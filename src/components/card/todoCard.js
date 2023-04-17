@@ -65,11 +65,11 @@ const TodoCard = ({ id, color, title, status }) => {
               </p>
             )}
           </div>
-          <div className="col-span-3 justify-self-end">
+          <div className="col-span-3 justify-self-end p-2">
             {statusState === "done" ? (
               <button
                 onClick={handleUndone}
-                className="rounded-full rounded m-2 my-2 border border-2 border-cyan-700 bg-cyan-700 text-white hover:text-transparent hover:bg-transparent"
+                className="rounded-full rounded border border-2 border-cyan-700 bg-cyan-700 text-white hover:text-transparent hover:bg-transparent"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@ const TodoCard = ({ id, color, title, status }) => {
             ) : (
               <button
                 onClick={handleDone}
-                className="rounded-full rounded m-2 my-2 border border-2 border-cyan-700 text-transparent hover:text-white hover:bg-cyan-700"
+                className="rounded-full rounded border border-2 border-cyan-700 text-transparent hover:text-white hover:bg-cyan-700"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +109,7 @@ const TodoCard = ({ id, color, title, status }) => {
             )}
             <button
               onClick={handleDelete}
-              className="rounded-full bg-transparent border border-2 border-red-900 hover:bg-red-700 text-red-900 font-semibold hover:text-white mr-5 my-2"
+              className="rounded-full bg-transparent border border-2 border-red-900 hover:bg-red-700 text-red-900 font-semibold hover:text-white"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
