@@ -47,7 +47,7 @@ const AddTodosForm = ({ unique }) => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="light"
+        theme="dark"
       />
       <Transition.Root show={modal.show} as={Fragment}>
         <Dialog
