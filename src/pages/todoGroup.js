@@ -58,7 +58,7 @@ function TodosGroup() {
                   </div>
 
                   <div className="">
-                    <h2 className="text-sm font-light text-gray-400 tracking-tight">
+                    <h2 className="text-xs font-light text-gray-400 tracking-tight">
                       {x.todo_done}/{x.todo_total} tasks completed
                     </h2>
                     <div class="h-1 w-full bg-gray-700 rounded-full">
