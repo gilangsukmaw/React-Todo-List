@@ -50,21 +50,23 @@ function TodosGroup() {
               }}
             >
               <div className="h-40 bg-gray-800 text-white aspect-w-1 overflow-hidden rounded-md lg:aspect-none lg:h-30 break-words shadow-md ">
-                <div className="h-40 grid grid-cols-1 p-5 gap-y-3 content-between">
-                  <div>
+                <div className="grid grid-cols-1 gap-y-1 p-5 h-56">
+                  <div className="h-5">
                     <h2 className="text-lg font-bold tracking-tight">
                       {x.title}
                     </h2>
                   </div>
 
-                  <div>
-                    <h2 className="text-lg font-light tracking-tight">
-                      {x.todo_total} tasks
+                  <div className="">
+                    <h2 className="text-sm font-light text-gray-400 tracking-tight">
+                      {x.todo_done}/{x.todo_total} tasks completed
                     </h2>
-                  </div>
-
-                  <div>
-                    <p>{x.created_at}</p>
+                    <div class="h-1 w-full bg-gray-700 rounded-full">
+                      <div
+                        class="h-1 bg-indigo-600 rounded-full"
+                        style={{ width: `${x.todo_done_percent}%` }}
+                      ></div>
+                    </div>
                   </div>
                 </div>
               </div>
