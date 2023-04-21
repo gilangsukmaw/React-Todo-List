@@ -16,7 +16,7 @@ const AddTodosGroupsForm = ({ unique }) => {
   });
 
   const dispatch = useContext(DispatchCtx);
-  const modal = useSelector((state) => state.addTodoModal);
+  const modal = useSelector((state) => state.addTodoGroupModal);
 
   const handleClose = () => {
     dispatch(addTodoGroupsModalCloseActions());
